@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block body %}
+ <ul>
+显示待办事项
+{#显示待办事项#}
+<a href="{{ url_for('addTask') }}">Create</a>
+<P></P>
+<ul class=tasks>
+{% for task in tasks %}
+    <li>{{ task.task }},{{ task.status }}&nbsp;&nbsp;<a href="/task/complete/{{ task.task_id }}">Complete</a>&nbsp;<a href="/task/delete/{{ task.task_id }}">Delete</a></li>
+{#        {{ entry.commet|safe }}#}
+{% endfor %}
+</ul>
+{% endblock %}

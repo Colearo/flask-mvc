@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block body %}
+ <ul> 
+Test MVC application using Flask
+<p>
+  <form action="{{ url_for('addTask') }}" method=post>
+    <dl>
+     <dd>Task:<input type=text name=task>
+     <dd><input type=submit value=Finish>
+    </dl>
+</form>
+
+{% endblock %}
